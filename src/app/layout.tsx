@@ -1,7 +1,8 @@
+import Providers from "@/providers";
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 
 export const metadata: Metadata = {
   title: "Vendly",
@@ -9,17 +10,19 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+const inter = localFont({
+  src: './InterVariable.ttf',
+  fallback: ["Inter"]
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${inter.className}`}>
+      <Providers>
+        <body>{children}</body>
+      </Providers>
     </html>
   );
 }
