@@ -10,7 +10,7 @@ interface ProvidersProps {
 
 export default function Providers({ children } : ProvidersProps) {
    return (
-      <ClerkProvider dynamic>
+      <ClerkProvider dynamic afterSignOutUrl="/">
          <ConvexProviderWithClerk>
             {children}
          </ConvexProviderWithClerk>
