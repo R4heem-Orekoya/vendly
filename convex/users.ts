@@ -9,8 +9,6 @@ export const current = query({
    },
 });
 
-
-
 export const upsertFromClerk = internalMutation({
    args: { data: v.any() as Validator<UserJSON> },
    async handler(ctx, { data }) {
