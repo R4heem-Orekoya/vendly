@@ -11,8 +11,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       <SidebarProvider>
          <DashboardSidebar />
          <SidebarInset>
-            <SidebarTrigger />
-            <main className="p-4">{children}</main>
+            <main>
+               <header className="flex items-center justify-between w-full h-12 px-2 border-b">
+                  <SidebarTrigger />
+               </header>
+               <div className="p-4">
+                  {children}
+               </div>
+            </main>
          </SidebarInset>
       </SidebarProvider>
    )

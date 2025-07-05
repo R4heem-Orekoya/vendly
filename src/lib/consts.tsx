@@ -1,4 +1,4 @@
-import { Cable, Calculator, CirclePercent, GlobeLock, HandCoins, Info, Landmark, LayoutDashboard, Logs, MonitorCog, Settings, ShoppingBasket, TruckElectric, Users, WalletCards, Workflow } from "lucide-react"
+import { BankIconDuo, CalculatorIconDuo, ConnectedIconDuo, DashboardIconDuo, DeliveryIconDuo, DeveloperIconDuo, DiscountIconDuo, GlobeIconDuo, InformationIconDuo, OrderIconDuo, ProductsIconDuo, SettingsIconDuo, SiteConfigIconDuo, TaxIconDuo, UsersIconDuo, WalletCardIconDuo } from "@/icons"
 
 export const dashboardLinks = [
    {
@@ -6,37 +6,37 @@ export const dashboardLinks = [
       items: [
          {
             title: "Dashboard",
-            icon: <LayoutDashboard />,
+            icon: <DashboardIconDuo />,
             href: "/dashboard"
          },
          {
             title: "Products",
-            icon: <ShoppingBasket />,
+            icon: <ProductsIconDuo />,
             href: "/dashboard/products"
          },
          {
             title: "Orders",
-            icon: <Logs />,
+            icon: <OrderIconDuo />,
             href: "/dashboard/orders"
          },
          {
             title: "Customers",
-            icon: <Users />,
+            icon: <UsersIconDuo />,
             href: "/dashboard/customers"
          },
          {
             title: "Discounts",
-            icon: <CirclePercent />,
+            icon: <DiscountIconDuo />,
             href: "/dashboard/discounts"
          },
          {
             title: "Expenses",
-            icon: <Calculator />,
+            icon: <CalculatorIconDuo />,
             href: "/dashboard/expenses"
          },
          {
             title: "Connected Apps",
-            icon: <Workflow />,
+            icon: <ConnectedIconDuo />,
             href: "/dashboard/connected-apps"
          },
       ]
@@ -46,47 +46,47 @@ export const dashboardLinks = [
       items: [
          {
             title: "Store Information",
-            icon: <Info />,
+            icon: <InformationIconDuo />,
             href: "/store-info"
          },
          {
             title: "Payment Methods",
-            icon: <WalletCards />,
+            icon: <WalletCardIconDuo />,
             href: "/payment-methods"
          },
          {
             title: "Shipping Methods",
-            icon: <TruckElectric />,
+            icon: <DeliveryIconDuo />,
             href: "/shipping-methods"
          },
          {
             title: "Taxes",
-            icon: <HandCoins />,
+            icon: <TaxIconDuo />,
             href: "/taxes"
          },
          {
             title: "Store Settings",
-            icon: <Settings />,
+            icon: <SettingsIconDuo />,
             href: "/store-settings"
          },
          {
             title: "Site Configuration",
-            icon: <MonitorCog />,
+            icon: <SiteConfigIconDuo />,
             href: "/site-config"
          },
          {
             title: "Domain Settings",
-            icon: <GlobeLock />,
+            icon: <GlobeIconDuo />,
             href: "/domain-settings"
          },
          {
             title: "Bank Details",
-            icon: <Landmark />,
-            href: "/bank-Details"
+            icon: <BankIconDuo />,
+            href: "/bank-details"
          },
          {
             title: "Developers",
-            icon: <Cable />,
+            icon: <DeveloperIconDuo />,
             href: "/developers"
          },
       ]

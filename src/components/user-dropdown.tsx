@@ -1,13 +1,6 @@
 "use client"
 
-import {
-   BadgeCheck,
-   Bell,
-   ChevronsUpDown,
-   CreditCard,
-   LogOut,
-   Sparkles,
-} from "lucide-react"
+import { ChevronsUpDown } from "lucide-react"
 
 import {
    Avatar,
@@ -29,6 +22,7 @@ import {
    SidebarMenuItem,
    useSidebar,
 } from "@/components/ui/sidebar"
+import { BellIconDuo, CardIconDuo, LogoutIconDuo, UserIconDuo, VerifiedIconDuo } from "@/icons"
 
 export function UserDropdown({
    user,
@@ -52,7 +46,7 @@ export function UserDropdown({
                   >
                      <Avatar data-open={open} className="size-9 md:[&[data-open=false]]:size-full rounded-full">
                         <AvatarImage src={user.avatar} alt={user.name} />
-                        <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                        <AvatarFallback className="rounded-lg">{user.name.charAt(0)}</AvatarFallback>
                      </Avatar>
                      <div className="grid flex-1 text-left text-sm leading-tight">
                         <span className="truncate font-medium">{user.name}</span>
@@ -71,7 +65,7 @@ export function UserDropdown({
                      <div className="flex items-center gap-2 p-1.5 text-left text-sm">
                         <Avatar className="size-9 rounded-full">
                            <AvatarImage src={user.avatar} alt={user.name} />
-                           <AvatarFallback className="rounded-md">CN</AvatarFallback>
+                           <AvatarFallback className="rounded-md">{user.name.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <div className="grid flex-1 text-left text-sm leading-tight">
                            <span className="truncate font-medium">{user.name}</span>
@@ -81,25 +75,25 @@ export function UserDropdown({
                   </DropdownMenuLabel>
                   <DropdownMenuGroup className="mt-2">
                      <DropdownMenuItem>
-                        <Sparkles />
+                        <VerifiedIconDuo />
                         Upgrade to Pro
                      </DropdownMenuItem>
                      <DropdownMenuItem>
-                        <BadgeCheck />
+                        <UserIconDuo />
                         Account
                      </DropdownMenuItem>
                      <DropdownMenuItem>
-                        <CreditCard />
+                        <CardIconDuo />
                         Billing
                      </DropdownMenuItem>
                      <DropdownMenuItem>
-                        <Bell />
+                        <BellIconDuo />
                         Notifications
                      </DropdownMenuItem>
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator className="opacity-60" />
                   <DropdownMenuItem variant="destructive">
-                     <LogOut />
+                     <LogoutIconDuo />
                      Log out
                   </DropdownMenuItem>
                </DropdownMenuContent>
