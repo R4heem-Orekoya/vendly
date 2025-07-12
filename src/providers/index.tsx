@@ -1,19 +1,17 @@
-"use client"
+"use client";
 
-import type { ReactNode } from "react"
-import ConvexProviderWithClerk from "./convex"
-import { ClerkProvider } from "@clerk/nextjs"
+import type { ReactNode } from "react";
+import ConvexProviderWithClerk from "./convex";
+import { ClerkProvider } from "@clerk/nextjs";
 
 interface ProvidersProps {
-   children: ReactNode
+   children: ReactNode;
 }
 
-export default function Providers({ children } : ProvidersProps) {
+export default function Providers({ children }: ProvidersProps) {
    return (
       <ClerkProvider dynamic afterSignOutUrl="/">
-         <ConvexProviderWithClerk>
-            {children}
-         </ConvexProviderWithClerk>
+         <ConvexProviderWithClerk>{children}</ConvexProviderWithClerk>
       </ClerkProvider>
-   )
+   );
 }

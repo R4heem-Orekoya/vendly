@@ -1,4 +1,24 @@
-import { BankIconDuo, CalculatorIconDuo, ConnectedIconDuo, DashboardIconDuo, DeliveryIconDuo, DeveloperIconDuo, DiscountIconDuo, GlobeIconDuo, InformationIconDuo, OrderIconDuo, ProductsIconDuo, SettingsIconDuo, SiteConfigIconDuo, TaxIconDuo, UsersIconDuo, WalletCardIconDuo } from "@/icons"
+import {
+   BankIcon,
+   CalculatorIcon,
+   ConnectedIcon,
+   DashboardIcon,
+   DeliveryIcon,
+   DeveloperIcon,
+   DiscountIcon,
+   GlobeIcon,
+   HangerIconDuo,
+   InformationIcon,
+   NotSureIconDuo,
+   OrderIcon,
+   PlugIconDuo,
+   ProductsIcon,
+   SettingsIcon,
+   SiteConfigIcon,
+   TaxIcon,
+   UsersIcon,
+   WalletCardIcon,
+} from "@/icons";
 
 export const dashboardLinks = [
    {
@@ -6,89 +26,138 @@ export const dashboardLinks = [
       items: [
          {
             title: "Dashboard",
-            icon: <DashboardIconDuo />,
-            href: "/dashboard"
+            icon: <DashboardIcon />,
+            href: "/dashboard",
          },
          {
             title: "Products",
-            icon: <ProductsIconDuo />,
-            href: "/dashboard/products"
+            icon: <ProductsIcon />,
+            href: "/dashboard/products",
          },
          {
             title: "Orders",
-            icon: <OrderIconDuo />,
-            href: "/dashboard/orders"
+            icon: <OrderIcon />,
+            href: "/dashboard/orders",
          },
          {
             title: "Customers",
-            icon: <UsersIconDuo />,
-            href: "/dashboard/customers"
+            icon: <UsersIcon />,
+            href: "/dashboard/customers",
          },
          {
             title: "Discounts",
-            icon: <DiscountIconDuo />,
-            href: "/dashboard/discounts"
+            icon: <DiscountIcon />,
+            href: "/dashboard/discounts",
          },
          {
             title: "Expenses",
-            icon: <CalculatorIconDuo />,
-            href: "/dashboard/expenses"
+            icon: <CalculatorIcon />,
+            href: "/dashboard/expenses",
          },
          {
             title: "Connected Apps",
-            icon: <ConnectedIconDuo />,
-            href: "/dashboard/connected-apps"
+            icon: <ConnectedIcon />,
+            href: "/dashboard/connected-apps",
          },
-      ]
+      ],
    },
    {
       label: "STORE",
       items: [
          {
             title: "Store Information",
-            icon: <InformationIconDuo />,
-            href: "/store-info"
+            icon: <InformationIcon />,
+            href: "/dashboard/store-info",
          },
          {
             title: "Payment Methods",
-            icon: <WalletCardIconDuo />,
-            href: "/payment-methods"
+            icon: <WalletCardIcon />,
+            href: "/dashboard/payment-methods",
          },
          {
             title: "Shipping Methods",
-            icon: <DeliveryIconDuo />,
-            href: "/shipping-methods"
+            icon: <DeliveryIcon />,
+            href: "/dashboard/shipping-methods",
          },
          {
             title: "Taxes",
-            icon: <TaxIconDuo />,
-            href: "/taxes"
+            icon: <TaxIcon />,
+            href: "/dashboard/taxes",
          },
          {
             title: "Store Settings",
-            icon: <SettingsIconDuo />,
-            href: "/store-settings"
+            icon: <SettingsIcon />,
+            href: "/dashboard/store-settings",
          },
          {
             title: "Site Configuration",
-            icon: <SiteConfigIconDuo />,
-            href: "/site-config"
+            icon: <SiteConfigIcon />,
+            href: "/dashboard/site-config",
          },
          {
             title: "Domain Settings",
-            icon: <GlobeIconDuo />,
-            href: "/domain-settings"
+            icon: <GlobeIcon />,
+            href: "/dashboard/domain-settings",
          },
          {
             title: "Bank Details",
-            icon: <BankIconDuo />,
-            href: "/bank-details"
+            icon: <BankIcon />,
+            href: "/dashboard/bank-details",
          },
          {
             title: "Developers",
-            icon: <DeveloperIconDuo />,
-            href: "/developers"
+            icon: <DeveloperIcon />,
+            href: "/dashboard/developers",
          },
-      ]
-   }
-]
+      ],
+   },
+];
+
+export const storeTypes = [
+   {
+      title: "Fashion",
+      value: "fashion",
+      icon: <HangerIconDuo />,
+   },
+   {
+      title: "Beauty & Personal Care",
+      value: "beauty&personal-care",
+      icon: <HangerIconDuo />,
+   },
+   {
+      title: "Electronics",
+      value: "electronics",
+      icon: <PlugIconDuo />,
+   },
+   {
+      title: "Gadgets",
+      value: "gadgets",
+      icon: <PlugIconDuo />,
+   },
+   {
+      title: "Health & Wellness",
+      value: "health&Wellness",
+      icon: <PlugIconDuo />,
+   },
+   {
+      title: "Food & Beverages",
+      value: "food&beverages",
+      icon: <PlugIconDuo />,
+   },
+   {
+      title: "Not Sure",
+      value: "not-sure",
+      icon: <NotSureIconDuo />,
+   },
+] as const;
+
+export type StoreType = (typeof storeTypes)[number]["value"];
+
+export const currencies = [
+   {
+      label: "Nigerian Naira",
+      value: "NGN",
+   },
+] as const;
+
+export type CurrencyType = (typeof currencies)[number]["value"];
