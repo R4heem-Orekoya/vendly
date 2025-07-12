@@ -19,7 +19,7 @@ export const upsertFromClerk = internalMutation({
          createdAt: data.created_at,
          updatedAt: data.updated_at,
          externalId: data.id,
-         emailVerifiedStatus: data.email_addresses[0]?.verification?.status
+         emailVerifiedStatus: data.email_addresses[0]?.verification?.status,
       };
 
       const user = await userByExternalId(ctx, data.id);
