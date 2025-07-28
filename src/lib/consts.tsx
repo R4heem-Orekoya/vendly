@@ -161,3 +161,45 @@ export const currencies = [
 ] as const;
 
 export type CurrencyType = (typeof currencies)[number]["value"];
+
+export const Units = [
+   {
+      label: "pc",
+      value: "pcs"
+   },
+   {
+      label: "carton",
+      value: "cartons"
+   },
+   {
+      label: "bottle",
+      value: "bottles"
+   },
+   {
+      label: "yard",
+      value: "yards"
+   },
+   {
+      label: "bag",
+      value: "bags"
+   },
+   {
+      label: "pair",
+      value: "pairs"
+   },
+] as const
+
+export type UnitsType = (typeof Units)[number]["value"];
+
+export const productTypes = [
+   {
+      label: "Physical Product",
+      value: "physical_product"
+   },
+   {
+      label: "Digital Product",
+      value: "digital_product"
+   },
+] as const
+
+export type productTypesType = (typeof productTypes)[number]["value"];

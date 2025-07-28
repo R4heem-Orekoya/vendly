@@ -14,8 +14,8 @@ export default defineSchema({
             v.literal("verified"),
             v.literal("transferable"),
             v.literal("failed"),
-            v.literal("expired"),
-         ),
+            v.literal("expired")
+         )
       ),
       externalId: v.string(),
       storeId: v.optional(v.id("stores")),
@@ -34,6 +34,50 @@ export default defineSchema({
       createdAt: v.number(),
       userId: v.id("users"),
    })
-   .index("byUserId", ["userId"])
-   .index("byDomain", ["domain"]),
+      .index("byUserId", ["userId"])
+      .index("byDomain", ["domain"]),
+   collections: defineTable({
+      name: v.string(),
+      description: v.optional(v.string()),
+      image: v.optional(v.string()),
+      imageKey: v.optional(v.string()),
+      storeId: v.id("stores"),
+   }).index("byName", ["name"]),
+   products: defineTable({
+      name: v.string(),
+      handle: v.string(),
+      description: v.optional(v.any()),
+      type: v.string(),
+      collections: v.array(v.string()),
+      price: v.number(),
+      compareAtPrice: v.optional(v.number()),
+      costPrice: v.optional(v.number()),
+      stockQuantity: v.optional(v.number()),
+      stockUnit: v.optional(v.string()),
+      pageTitle: v.optional(v.string()),
+      pageDescription: v.optional(v.string()),
+
+      images: v.optional(
+         v.array(
+            v.object({
+               url: v.string(),
+               key: v.string(),
+               name: v.string(),
+               hash: v.string(),
+               size: v.number(),
+            })
+         )
+      ),
+
+      productFile: v.optional(
+         v.object({
+            name: v.string(),
+            url: v.string(),
+            key: v.string(),
+            size: v.number(),
+         })
+      ),
+
+      storeId: v.id("stores"),
+   }).index("byHandle", ["handle"]),
 });

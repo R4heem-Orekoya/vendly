@@ -33,6 +33,8 @@ export default function RootLayout({
                   closeButton
                   className="font-inter"
                   position="top-center"
+                  theme="dark"
+                  visibleToasts={5}
                   richColors
                />
             </body>

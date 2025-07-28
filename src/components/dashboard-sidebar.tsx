@@ -5,7 +5,7 @@ import DashboardSidebarFooter from "./sidebar-footer";
 
 export function DashboardSidebar() {
   return (
-    <Sidebar variant="inset" collapsible="icon">
+    <Sidebar variant="sidebar" collapsible="icon">
       <DashboardSidebarHeader />
       <DashboardSidebarContent />
       <DashboardSidebarFooter />
