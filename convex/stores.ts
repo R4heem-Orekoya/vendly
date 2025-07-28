@@ -14,7 +14,7 @@ export const create = mutation({
    handler: async (ctx, args) => {
       const { name, domain, type } = args;
       const currentUser = await ctx.runQuery(api.users.current);
-
+      
       if (!currentUser) {
          return { error: true, message: "Unauthorized!" };
       }

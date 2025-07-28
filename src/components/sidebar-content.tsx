@@ -16,7 +16,7 @@ export default function DashboardSidebarContent() {
   const pathname = usePathname();
 
   return (
-    <SidebarContent className="mt-4 gap-6 px-4 md:px-2">
+    <SidebarContent className="mt-4 gap-6 px-4">
       {dashboardLinks.map((item) => (
         <SidebarGroup key={item.label}>
           <SidebarGroupLabel>{item.label}</SidebarGroupLabel>

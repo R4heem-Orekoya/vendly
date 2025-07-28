@@ -25,3 +25,6 @@ export { NotSureIcon, NotSureIconDuo } from "./faces";
 export { Spinner } from "./spinner";
 export { Editicon, EditiconDuo } from "./edit";
 export { UploadIcon, UploadIconDuo } from "./upload";
+export { PlusIcon } from "./plus"
+export { ExportIcon, ExportIconDuo } from "./export"
+export { TrashIcon, TrashIconDuo } from "./trash"
