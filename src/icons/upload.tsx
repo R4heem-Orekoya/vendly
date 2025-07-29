@@ -1,6 +1,6 @@
 import React from "react";
 
-interface Props extends React.SVGProps<SVGSVGElement> {}
+type Props = React.SVGProps<SVGSVGElement>
 
 export function UploadIcon(props: Props) {
   return (

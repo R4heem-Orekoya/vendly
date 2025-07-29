@@ -14,15 +14,13 @@ export interface GaugeProps extends Omit<SVGProps<SVGSVGElement>, "className"> {
     | "warning"
     | "success"
     | "info"
-    | string
-    | { [key: number]: string };
+    | Record<number, string>;
   secondary?:
     | "danger"
     | "warning"
     | "success"
     | "info"
-    | string
-    | { [key: number]: string };
+    | Record<number, string>;
 
   transition?: {
     length?: number;
@@ -183,7 +181,7 @@ function Gauge({
           strokePercent >= currentKey &&
           (strokePercent < nextKey || !nextKey)
         ) {
-          primaryStroke = primary[currentKey] || "";
+          primaryStroke = primary[currentKey] ?? "";
 
           if (
             ["danger", "warning", "success", "info"].includes(primaryStroke)
@@ -194,7 +192,7 @@ function Gauge({
                 warning: "#f59e0b",
                 info: "#3b82f6",
                 success: "#22c55e",
-              }[primaryStroke] || primaryStroke;
+              }[primaryStroke] ?? primaryStroke;
           }
 
           break;
@@ -232,7 +230,7 @@ function Gauge({
           stroke_percent_secondary >= currentKey &&
           (stroke_percent_secondary < nextKey || !nextKey)
         ) {
-          secondaryStroke = secondary[currentKey] || "";
+          secondaryStroke = secondary[currentKey] ?? "";
 
           if (
             ["danger", "warning", "success", "info"].includes(secondaryStroke)
@@ -243,7 +241,7 @@ function Gauge({
                 warning: "#fde68a",
                 info: "#bfdbfe",
                 success: "#bbf7d0",
-              }[secondaryStroke] || secondaryStroke;
+              }[secondaryStroke] ?? secondaryStroke;
           }
 
           break;

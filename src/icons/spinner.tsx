@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {}
+export type SpinnerProps = React.SVGProps<SVGSVGElement>
 
 export function Spinner({ width = 24, height = 24, ...props }: SpinnerProps) {
   return (

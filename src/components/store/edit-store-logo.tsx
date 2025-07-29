@@ -1,6 +1,5 @@
 "use client";
 
-import { EditiconDuo } from "@/icons";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import StoreLogoDropZone from "./store-logo-dropzone";

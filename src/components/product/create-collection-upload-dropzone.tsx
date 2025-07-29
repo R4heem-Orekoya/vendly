@@ -16,7 +16,7 @@ export default function CreateCollectionUploadDropzone({
    setSelectedFile,
    isFormSubmitting,
 }: CreateCollectionUploadDropzoneProps) {
-   const onDrop = useCallback(async (acceptedFiles: File[]) => {
+   const onDrop = useCallback((acceptedFiles: File[]) => {
       const file = acceptedFiles[0];
       if (!file) return;
 

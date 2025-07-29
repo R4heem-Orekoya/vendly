@@ -9,9 +9,7 @@ import { PriceInput } from "../price-input";
 import { getCurrencySign } from "@/lib/utils";
 import { useStore } from "@/hooks/use-store";
 
-interface ProductPricingProps {}
-
-export default function ProductPricing({}: ProductPricingProps) {
+export default function ProductPricing() {
    const {
       control,
       formState: { errors },

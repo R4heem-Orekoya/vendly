@@ -5,9 +5,7 @@ import { Textarea } from '../ui/textarea'
 import { useFormContext } from 'react-hook-form'
 import type { ProductSchemaType } from "@/validators/product"
 
-interface SearchEngineListingProps {}
-
-export default function SearchEngineListing({ }: SearchEngineListingProps) {
+export default function SearchEngineListing() {
    const { register, formState: { errors } } = useFormContext<ProductSchemaType>()
 
    return (

@@ -30,13 +30,11 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 
 interface MenuBarProps {
-   editor: Editor | null
+   editor: Editor
 }
 
 export default function MenuBar({ editor }: MenuBarProps) {
    const [linkValue, setLinkValue] = useState("")
-
-   if (!editor) return null
 
    const Options = [
       {
@@ -116,8 +114,10 @@ export default function MenuBar({ editor }: MenuBarProps) {
       try {
          editor.chain().focus().extendMarkRange("link").setLink({ href: linkValue }).run()
          setLinkValue("")
-      } catch (err: any) {
-         alert(err.message)
+      } catch (err) {
+         if(err instanceof Error) {
+            alert(err.message) 
+         }
       }
    }, [editor, linkValue])
 

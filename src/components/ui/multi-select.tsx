@@ -166,7 +166,7 @@ export function MultiSelectValue({
         break
       }
       amount = itemsRef.current.size - i
-      //@ts-ignore
+      //@ts-expect-error some error
       child.style.display = "none"
       overflowElement?.style.removeProperty("display")
     }

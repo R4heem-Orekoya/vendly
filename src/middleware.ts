@@ -4,11 +4,11 @@ import { NextResponse, type NextRequest } from "next/server";
 
 function extractSubdomain(request: NextRequest): string | null {
    const url = request.url;
-   const host = request.headers.get("host") || "";
+   const host = request.headers.get("host") ?? "";
    const hostname = host.split(":")[0];
 
    if (url.includes("localhost") || url.includes("127.0.0.1")) {
-      const fullUrlMatch = url.match(/http:\/\/([^.]+)\.localhost/);
+      const fullUrlMatch = /http:\/\/([^.]+)\.localhost/.exec(url);
       if (fullUrlMatch && fullUrlMatch[1]) {
          return fullUrlMatch[1];
       }
@@ -47,8 +47,8 @@ export default clerkMiddleware(async (auth, req) => {
    const subdomain = extractSubdomain(req);
 
    const isDev = process.env.NODE_ENV !== "production";
-   const isStaticAsset = pathname.match(
-      /\.(ico|svg|png|jpg|jpeg|css|js|woff2?)$/
+   const isStaticAsset = !!/\.(ico|svg|png|jpg|jpeg|css|js|woff2?)$/.exec(
+      pathname
    );
 
    if (!subdomain && !isDev && !isStaticAsset && pathname !== "/waitlist") {

@@ -13,6 +13,7 @@ export default function DashboardSidebarHeader() {
       >
          <div data-open={open} className="relative size-8">
             <Image
+               // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                src={AppLogo}
                alt="app logo"
                className="h-full w-full object-cover"

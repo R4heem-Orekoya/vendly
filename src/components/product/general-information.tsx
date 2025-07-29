@@ -18,9 +18,7 @@ import { useStore } from "@/hooks/use-store"
 import { useCollections } from "@/hooks/use-collection"
 import UploadDropZone from "./create-product-dropzone"
 
-interface GeneralInformtaionProps { }
-
-export default function GeneralInformtaion({ }: GeneralInformtaionProps) {
+export default function GeneralInformtaion() {
    const store = useStore()
    const collections = useCollections(store?._id)
 

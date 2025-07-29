@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
    try {
+       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { domain } = await req.json();
 
       if (!domain || typeof domain !== "string") {

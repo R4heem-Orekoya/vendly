@@ -12,6 +12,7 @@ export default function AppLogo({ svgClassName, textClassName }: AppLogoProps) {
       <div className="flex items-center gap-2">
          <div className="relative size-10">
             <Image
+               // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                src={LogoSvg}
                alt="application Logo"
                width={100}
