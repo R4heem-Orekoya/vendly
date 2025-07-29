@@ -80,4 +80,9 @@ export default defineSchema({
 
       storeId: v.id("stores"),
    }).index("byHandle", ["handle"]),
+
+      
+   waitlist: defineTable({
+      email: v.string()
+   })
 });
