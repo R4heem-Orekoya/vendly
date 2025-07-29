@@ -7,9 +7,7 @@ import { Controller, useFormContext } from 'react-hook-form'
 import type { ProductSchemaType } from '@/validators/product'
 import { NumberInput } from '../ui/number-input'
 
-interface ProductInventoryProps { }
-
-export default function ProductInventory({ }: ProductInventoryProps) {
+export default function ProductInventory() {
    const { control, formState: { errors } } = useFormContext<ProductSchemaType>();
 
    return (

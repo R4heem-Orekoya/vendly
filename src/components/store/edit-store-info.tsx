@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { useQuery } from "convex/react";
@@ -17,7 +18,7 @@ import { currencies, storeTypes } from "@/lib/consts";
 import { Skeleton } from "../ui/skeleton";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { storeSchema, updateStoreSchema, type StoreSchemaType } from "@/validators/store";
+import { updateStoreSchema, type StoreSchemaType } from "@/validators/store";
 import { useEffect, useImperativeHandle } from "react";
 import type { EditStoreFormRef } from "@/types";
 
@@ -41,6 +42,7 @@ export default function EditStoreInfoWrapper(props: EditStoreInfoWrapperProps) {
 }
 
 interface EditStoreInfoProps extends EditStoreInfoWrapperProps {
+   //TODO: get the correct type
    store: NonNullable<ReturnType<typeof useQuery>>;
 }
 

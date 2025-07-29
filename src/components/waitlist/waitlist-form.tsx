@@ -35,8 +35,10 @@ export default function WaitlistForm() {
       } catch (error) {
          console.log(error);
          if(error instanceof ConvexError) {
-            toast.error(error.data)
+            toast.error(error.data as string)
+            return
          }
+         toast.error("Something went wrong!")
       }
    }
 

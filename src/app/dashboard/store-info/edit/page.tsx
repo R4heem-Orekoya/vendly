@@ -5,6 +5,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Spinner } from "@/icons";
 import type { EditStoreFormRef } from "@/types";
+import type { StoreSchemaType } from "@/validators/store";
 import { useMutation } from "convex/react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -14,33 +15,41 @@ import { toast } from "sonner";
 import { api } from "~/convex/_generated/api";
 
 export default function Page() {
-   const updateStore = useMutation(api.stores.updateStoreInfo)
+   const updateStore = useMutation(api.stores.updateStoreInfo);
    const formRef = useRef<EditStoreFormRef>(null);
    const [isDirty, setIsDirty] = useState(false);
    const [isSubmitting, setIsSubmitting] = useState(false);
-   
-   const router = useRouter()
 
-   const handleSubmit = async (data: any) => {
+   const router = useRouter();
+
+   const handleSubmit = async (data: StoreSchemaType) => {
       try {
          console.log("Form data:", data);
-         const res = await updateStore(data)
-         
-         if(res.error) {
-            toast.error(res.message)
-            return
+         const res = await updateStore({
+            currency: data.currency,
+            name: data.name,
+            number: data.number,
+            type: data.type,
+            address: data.address ?? undefined,
+            description: data.description ?? undefined,
+         });
+
+         if (res.error) {
+            toast.error(res.message);
+            return;
          }
-         
-         router.replace("/dashboard/store-info")
-         toast.success("Saved changes successfully!")
+
+         router.replace("/dashboard/store-info");
+         toast.success("Saved changes successfully!");
       } catch (error) {
-         toast.error("Something went wrong!")
+         console.log(error);
+         toast.error("Something went wrong!");
       }
    };
-   
+
    useEffect(() => {
-      router.prefetch("/dashboard/store-info")
-   }, [])
+      router.prefetch("/dashboard/store-info");
+   }, []);
 
    return (
       <>
@@ -84,7 +93,7 @@ export default function Page() {
          <EditStoreInfoWrapper
             ref={formRef}
             onSubmit={handleSubmit}
-            onStateChange={(state) => {
+            onStateChange={state => {
                setIsDirty(state.isDirty);
                setIsSubmitting(state.isSubmitting);
             }}

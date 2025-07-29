@@ -11,6 +11,7 @@ export default function Page() {
                <div className="flex items-center gap-2">
                   <div className="relative size-10">
                      <Image
+                        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                         src={AppLogo}
                         alt="app logo"
                         className="h-full w-full object-cover"
@@ -19,21 +20,26 @@ export default function Page() {
                   <p className="text-xl font-semibold tracking-tight">Vendly</p>
                </div>
 
-               <h4 className="mt-6 text-2xl font-semibold">Welcome to Vendly!</h4>
+               <h4 className="mt-6 text-2xl font-semibold">
+                  Welcome to Vendly!
+               </h4>
 
                <div className="text-muted-foreground mt-4 space-y-4 text-sm leading-relaxed">
                   <p>
-                     Create and manage your store with ease. Vendly helps you reach
-                     customers, track orders, and grow your business without the usual
-                     tech headaches.
+                     Create and manage your store with ease. Vendly helps you
+                     reach customers, track orders, and grow your business
+                     without the usual tech headaches.
                   </p>
                   <p>
-                     Whether you're selling clothes, gadgets, or digital products, our
-                     platform is designed to scale with your goals.
+                     Whether you&apos;re selling clothes, gadgets, or digital
+                     products, our platform is designed to scale with your
+                     goals.
                   </p>
                   <p>
                      Start with a free{" "}
-                     <span className="text-primary font-medium">vendly.com</span>{" "}
+                     <span className="text-primary font-medium">
+                        vendly.com
+                     </span>{" "}
                      domain and upgrade anytime to your custom domain.
                   </p>
                </div>
@@ -41,6 +47,7 @@ export default function Page() {
 
             <div className="mx-auto mt-10 size-72">
                <Image
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                   src={Illustraction}
                   alt="Illustration"
                   className="h-auto w-full object-contain"

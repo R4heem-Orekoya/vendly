@@ -66,7 +66,10 @@ export default function StoreInfo() {
             <div className="divide-y">
                <InfoRow label="Contact Phone" value={store.number ?? "..."} />
                <InfoRow label="Store Address" value={store.address ?? "..."} />
-               <InfoRow label="Store Currency" value={store.currency ?? "NGN"} />
+               <InfoRow
+                  label="Store Currency"
+                  value={store.currency ?? "NGN"}
+               />
             </div>
          </div>
       </div>
@@ -109,7 +112,7 @@ function StoreInfoSkeleton() {
          <div className="border-border/50 space-y-6 rounded-lg border p-6">
             <Skeleton className="h-6 w-40 rounded" />
             <div className="space-y-4">
-               {[...Array(4)].map((_, i) => (
+               {Array.from({ length: 4 }).map((_, i) => (
                   <div key={i} className="flex items-center justify-between">
                      <Skeleton className="h-4 w-32 rounded" />
                      <Skeleton className="h-4 w-24 rounded" />
