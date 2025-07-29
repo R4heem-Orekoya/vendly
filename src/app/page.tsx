@@ -1,11 +1,10 @@
-"use client";
+"use client"
 
-import { Authenticated, Unauthenticated, useConvexAuth } from "convex/react";
 import { SignInButton, UserButton } from "@clerk/nextjs";
+import { Authenticated, Unauthenticated } from "convex/react";
+import React from "react";
 
 export default function Home() {
-   const session = useConvexAuth();
-
    return (
       <main className="p-4">
          <Authenticated>

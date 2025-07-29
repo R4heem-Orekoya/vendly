@@ -1,6 +1,6 @@
 import { Button, buttonVariants } from '@/components/ui/button'
 import { SidebarTrigger } from '@/components/ui/sidebar'
-import { ExportIcon, ExportIconDuo, PlusIcon } from '@/icons'
+import { ExportIconDuo, PlusIcon } from '@/icons'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'

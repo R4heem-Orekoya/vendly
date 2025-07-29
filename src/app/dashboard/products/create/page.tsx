@@ -16,7 +16,6 @@ import { useMutation } from "convex/react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { api } from "~/convex/_generated/api";
